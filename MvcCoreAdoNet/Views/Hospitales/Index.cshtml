@@ -1,5 +1,6 @@
 ﻿@model List<Hospital>
 
+
     <h1>Hospitales Ado Net</h1>
     <table class="table-bordered">
         <thead>
@@ -7,15 +8,18 @@
         <th>Nombre</th>
         <th>Dirección</th>
         <th>Teléfono</th>
+        <th></th>
     </tr>
     </thead>
    <tbody>
         @foreach(Hospital hospital in Model)
         {
             <tr>
+                
                 <td>@hospital.Nombre</td>
                 <td>@hospital.Direccion</td>
                 <td>@hospital.Telefono</td>
+                <td>@Html.ActionLink("Details","Details","Hospitales",new {id= hospital.IdHospital},new {@class="btn btn-success"})</td>
             </tr>
         }
     </tbody>
